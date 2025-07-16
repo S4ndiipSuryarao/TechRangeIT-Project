@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TechRange IT</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Add Babel Standalone for in-browser TSX transpilation -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              poppins: ['Poppins', 'sans-serif'],
+            },
+            colors: {
+              'corporate-blue': '#0d2240',
+              'accent-teal': '#00a79d',
+              'dark-text': '#1f2937',
+              'muted-text': '#6b7280',
+              'off-white': '#f9fafb',
+              'light-gray-bg': '#f3f4f6',
+              'footer-bg': '#0d2240',
+            },
+            zIndex: {
+              '-1': '-1',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      main {
+        perspective: 1000px;
+        transform-style: preserve-3d;
+      }
+      .section-animate {
+        transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1), opacity 1s cubic-bezier(0.19, 1, 0.22, 1);
+        transform: translateZ(-300px) scale(0.9);
+        opacity: 0;
+        will-change: transform, opacity;
+      }
+      .section-visible {
+        transform: translateZ(0) scale(1);
+        opacity: 1;
+      }
+
+      /* Staggered Animations */
+      .animate-child {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: transform 0.8s cubic-bezier(0.19, 1, 0.22, 1), opacity 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+      }
+      .section-visible .animate-child {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .section-visible .delay-1 { transition-delay: 0.1s; }
+      .section-visible .delay-2 { transition-delay: 0.2s; }
+      .section-visible .delay-3 { transition-delay: 0.3s; }
+      .section-visible .delay-4 { transition-delay: 0.4s; }
+      .section-visible .delay-5 { transition-delay: 0.5s; }
+      .section-visible .delay-6 { transition-delay: 0.6s; }
+
+      /* Process Line Animation */
+      .process-line {
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 1000;
+        transition: stroke-dashoffset 2s cubic-bezier(0.42, 0, 0.58, 1);
+      }
+      .section-visible .process-line {
+        stroke-dashoffset: 0;
+        transition-delay: 0.5s;
+      }
+      
+      /* Chat message styling */
+      .chat-message {
+        padding: 0.75rem 1rem;
+        border-radius: 1rem;
+        max-width: 80%;
+        word-wrap: break-word;
+      }
+      .chat-message.user {
+        background-color: #0d2240; /* corporate-blue */
+        color: white;
+        align-self: flex-end;
+        border-bottom-right-radius: 0.25rem;
+      }
+      .chat-message.ai {
+        background-color: #f3f4f6; /* light-gray-bg */
+        color: #1f2937; /* dark-text */
+        align-self: flex-start;
+        border-bottom-left-radius: 0.25rem;
+      }
+
+      /* Scrollbar styling for chat */
+      .chat-body::-webkit-scrollbar {
+        width: 6px;
+      }
+      .chat-body::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      .chat-body::-webkit-scrollbar-thumb {
+        background-color: #cbd5e1;
+        border-radius: 20px;
+        border: 3px solid transparent;
+      }
+
+      /* Image gradient masks */
+      @media (min-width: 768px) { /* md breakpoint */
+        .md-mask-fade-left {
+          mask-image: linear-gradient(to left, black 70%, transparent 100%);
+          -webkit-mask-image: linear-gradient(to left, black 70%, transparent 100%);
+        }
+      }
+      @media (min-width: 1024px) { /* lg breakpoint */
+        .lg-mask-fade-right {
+          mask-image: linear-gradient(to right, black 70%, transparent 100%);
+          -webkit-mask-image: linear-gradient(to right, black 70%, transparent 100%);
+        }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.1.0",
+    "react-dom/client": "https://esm.sh/react-dom@^19.1.0/client",
+    "@google/genai": "https://esm.sh/@google/genai@^1.9.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.6.3",
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "express": "https://esm.sh/express@^5.1.0",
+    "cors": "https://esm.sh/cors@^2.8.5",
+    "path": "https://esm.sh/path@^0.12.7",
+    "dotenv": "https://esm.sh/dotenv@^17.2.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="font-poppins text-gray-300">
+    <div id="root"></div>
+    <script type="text/babel" data-type="module" src="/index.tsx"></script>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
