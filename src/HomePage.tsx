@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import AnimatedSection from '../components/AnimatedSection';
 import Hero from '../components/Hero';
 import Services from '../components/Services';
+import AboutUs from '../components/AboutUs';
 import OurProcess from '../components/OurProcess';
 import WhyChooseUs from '../components/WhyChooseUs';
 import { AIChatWidgetRef } from '../components/AIChatWidget'; // Assuming AIChatWidgetRef is defined here or needs to be imported
@@ -19,6 +20,9 @@ const HomePage: React.FC = () => {
         <>
             <AnimatedSection id="home" startVisible>
                 <Hero />
+            </AnimatedSection>
+            <AnimatedSection id="about">
+                <AboutUs />
             </AnimatedSection>
             <AnimatedSection id="services">
                 <Services onServiceInquiry={handleServiceInquiry} />
