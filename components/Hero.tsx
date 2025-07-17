@@ -1,16 +1,9 @@
 import React from 'react';
+import { handleNavClick } from '@/src/utils/scrollUtils';
 
 const Hero: React.FC = () => {
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
-    e.preventDefault();
-    const targetElement = document.getElementById(targetId.substring(1));
-    if (targetElement) {
-      targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  };
-
-  return (
-    <section 
+ return (
+ <section
       className="relative h-screen flex items-center justify-center text-center overflow-hidden bg-corporate-blue"
     >
       <video

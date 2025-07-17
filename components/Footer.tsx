@@ -2,16 +2,9 @@ import React from 'react';
 import FacebookIcon from './icons/FacebookIcon';
 import TwitterIcon from './icons/TwitterIcon';
 import LinkedInIcon from './icons/LinkedInIcon';
-
+import Link from 'next/link'; // Import Link from next/link
+;
 const Footer: React.FC = () => {
-    const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
-        e.preventDefault();
-        const targetElement = document.getElementById(targetId.substring(1));
-        if (targetElement) {
-            targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-    };
-
     return (
         <footer className="bg-footer-bg text-gray-300">
             <div className="container mx-auto px-6 py-12">
@@ -35,10 +28,10 @@ const Footer: React.FC = () => {
                     <div>
                         <h4 className="text-lg font-semibold text-white mb-4">Quick Links</h4>
                         <ul className="space-y-2">
-                            <li><a href="#about" onClick={(e) => handleNavClick(e, '#about')} className="text-gray-400 hover:text-accent-teal transition-colors">About Us</a></li>
-                            <li><a href="#services" onClick={(e) => handleNavClick(e, '#services')} className="text-gray-400 hover:text-accent-teal transition-colors">Services</a></li>
-                            <li><a href="#process" onClick={(e) => handleNavClick(e, '#process')} className="text-gray-400 hover:text-accent-teal transition-colors">Our Process</a></li>
-                            <li><a href="#contact" onClick={(e) => handleNavClick(e, '#contact')} className="text-gray-400 hover:text-accent-teal transition-colors">Contact Us</a></li>
+                            <li><Link href="/about" className="text-gray-400 hover:text-accent-teal transition-colors">About Us</Link></li>
+                            <li><Link href="#services" className="text-gray-400 hover:text-accent-teal transition-colors">Services</Link></li>
+                            <li><Link href="#process" className="text-gray-400 hover:text-accent-teal transition-colors">Our Process</Link></li>
+                            <li><Link href="#contact" className="text-gray-400 hover:text-accent-teal transition-colors">Contact Us</Link></li>
                         </ul>
                     </div>
 
@@ -46,10 +39,10 @@ const Footer: React.FC = () => {
                      <div>
                         <h4 className="text-lg font-semibold text-white mb-4">Our Services</h4>
                         <ul className="space-y-2">
-                            <li><a href="#services" onClick={(e) => handleNavClick(e, '#services')} className="text-gray-400 hover:text-accent-teal transition-colors">Application Development</a></li>
-                            <li><a href="#services" onClick={(e) => handleNavClick(e, '#services')} className="text-gray-400 hover:text-accent-teal transition-colors">Cloud Solutions</a></li>
-                            <li><a href="#services" onClick={(e) => handleNavClick(e, '#services')} className="text-gray-400 hover:text-accent-teal transition-colors">Cybersecurity</a></li>
-                            <li><a href="#services" onClick={(e) => handleNavClick(e, '#services')} className="text-gray-400 hover:text-accent-teal transition-colors">Data & Analytics</a></li>
+                            <li><Link href="#services" className="text-gray-400 hover:text-accent-teal transition-colors">Application Development</Link></li>
+                            <li><Link href="#services" className="text-gray-400 hover:text-accent-teal transition-colors">Cloud Solutions</Link></li>
+                            <li><Link href="#services" className="text-gray-400 hover:text-accent-teal transition-colors">Cybersecurity</Link></li>
+                            <li><Link href="#services" className="text-gray-400 hover:text-accent-teal transition-colors">Data & Analytics</Link></li>
                         </ul>
                     </div>
 

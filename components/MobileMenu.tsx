@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { handleNavClick } from '@/src/utils/scrollUtils';
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -11,10 +12,7 @@ interface MobileMenuProps {
 const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, links, activeSection, onClose }) => {
   const handleMenuClick = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
     e.preventDefault();
-    const targetElement = document.getElementById(targetId.substring(1));
-    if (targetElement) {
-        targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+ handleNavClick(e, targetId);
     onClose();
   };
 
