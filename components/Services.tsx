@@ -39,10 +39,9 @@ const services = [
   },
 ];
 
-const ServiceCard: React.FC<{ icon: React.ReactNode; title: string; description: string; delay: number; onClick: () => void; }> = ({ icon, title, description, delay, onClick }) => (
+const ServiceCard: React.FC<{ icon: React.ReactNode; title: string; description: string; delay: number; }> = ({ icon, title, description, delay }) => (
   <div className={`group [perspective:1000px] animate-child delay-${delay}`}>
     <button
-      onClick={onClick}
       className="w-full h-full bg-white/10 p-6 md:p-8 rounded-lg shadow-lg text-left transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(15deg)_rotateX(5deg)] border-t-4 border-accent-teal/80 focus:outline-none focus:ring-2 focus:ring-offset-4 focus:ring-accent-teal"
     >
       <div className="inline-block text-accent-teal bg-accent-teal/10 p-4 rounded-full mb-6 transition-transform duration-300 group-hover:scale-110">
@@ -54,7 +53,7 @@ const ServiceCard: React.FC<{ icon: React.ReactNode; title: string; description:
   </div>
 );
 
-const Services: React.FC<{ onServiceInquiry: (title: string) => void }> = ({ onServiceInquiry }) => {
+const Services: React.FC<{ onServiceInquiry?: (title: string) => void }> = () => {
   return (
     <section className="py-20">
       <div className="container mx-auto px-6">
@@ -67,8 +66,7 @@ const Services: React.FC<{ onServiceInquiry: (title: string) => void }> = ({ onS
             <ServiceCard 
               key={index} 
               {...service} 
-              delay={index+1} 
-              onClick={() => onServiceInquiry(service.title)}
+              delay={index + 1} 
             />
           ))}
         </div>

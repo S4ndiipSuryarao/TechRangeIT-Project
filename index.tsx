@@ -1,26 +1,19 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import CanvasBackground from './components/CanvasBackground';
 import Header from './components/Header';
 import { Routes, Route } from 'react-router-dom';
-import ContactUs from './components/ContactUs';
 import Footer from './components/Footer';
-import AIChatWidget, { AIChatWidgetRef } from './components/AIChatWidget';
 import HomePage from './src/HomePage'; // Assuming HomePage is in src/HomePage.tsx
 import AboutPage from './src/AboutPage'; // Assuming AboutPage is in src/AboutPage.tsx
 import ServicesPage from './src/ServicesPage'; // Assuming ServicesPage is in src/ServicesPage.tsx
 import OurProcessPage from './src/OurProcessPage'; // Assuming OurProcessPage is in src/OurProcessPage.tsx
 import WhyChooseUsPage from './src/WhyChooseUsPage'; // Assuming WhyChooseUsPage is in src/WhyChooseUsPage.tsx
 import ContactUsPage from './src/ContactUsPage'; // Assuming ContactUsPage is in src/ContactUsPage.tsx
+import ContactUs from './components/ContactUs';
 
 const App: React.FC = () => { // Add the App component definition back
-    const chatWidgetRef = useRef<AIChatWidgetRef>(null);
-
-    const handleServiceInquiry = (serviceTitle: string) => {
-        chatWidgetRef.current?.openWithPrompt(`Tell me more about your ${serviceTitle} services.`);
-    };
-
     return (
         <div className="relative">
             <CanvasBackground />
@@ -35,7 +28,6 @@ const App: React.FC = () => { // Add the App component definition back
             </Routes>
             <ContactUs />
             <Footer />
-            <AIChatWidget ref={chatWidgetRef} />
         </div>
     );
 };
