@@ -1,4 +1,6 @@
 # TechRange IT - Full-Stack Application
+<img width="1896" height="861" alt="image" src="https://github.com/user-attachments/assets/339463b4-f33a-4375-91c2-1166530a2b25" />
+
 
 This project is a complete full-stack web application built with a React frontend and a Node.js/Express backend.
 
