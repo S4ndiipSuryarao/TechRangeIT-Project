@@ -27,7 +27,7 @@ const Hero: React.FC = () => {
         <a
           href="#contact"
           onClick={(e) => handleNavClick(e, '#contact')}
-          className="bg-accent-teal text-white font-bold py-3 px-6 rounded-md text-lg animate-child delay-3 opacity-90 hover:opacity-100 hover:scale-105 transition-all duration-300"
+          className="bg-gradient-to-r from-accent-teal to-corporate-blue text-white font-bold py-3 px-6 rounded-md text-lg animate-child delay-3 opacity-90 hover:opacity-100 hover:scale-105 transition-all duration-300"
           style={{
             boxShadow: '0 12px 20px rgba(0, 0, 0, 0.6)', // Strong visible drop shadow
           }}
