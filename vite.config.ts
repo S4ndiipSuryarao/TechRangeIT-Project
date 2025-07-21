@@ -11,6 +11,9 @@ export default defineConfig(({ mode }) => {
         alias: {
           '@': path.resolve(__dirname, '.'),
         }
+      },
+      server: { // Add server configuration
+        // We can add proxy here later if needed
       }
     };
 });

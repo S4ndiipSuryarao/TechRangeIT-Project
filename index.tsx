@@ -1,35 +1,35 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
 import CanvasBackground from './components/CanvasBackground';
 import Header from './components/Header';
-import { Routes, Route } from 'react-router-dom';
 import Footer from './components/Footer';
-import HomePage from './src/HomePage'; // Assuming HomePage is in src/HomePage.tsx
-import AboutPage from './src/AboutPage'; // Assuming AboutPage is in src/AboutPage.tsx
-import ServicesPage from './src/ServicesPage'; // Assuming ServicesPage is in src/ServicesPage.tsx
-import OurProcessPage from './src/OurProcessPage'; // Assuming OurProcessPage is in src/OurProcessPage.tsx
-import WhyChooseUsPage from './src/WhyChooseUsPage'; // Assuming WhyChooseUsPage is in src/WhyChooseUsPage.tsx
-import ContactUsPage from './src/ContactUsPage'; // Assuming ContactUsPage is in src/ContactUsPage.tsx
-import ContactUs from './components/ContactUs';
+import ScrollToTop from './components/ScrollToTop';
 
-const App: React.FC = () => { // Add the App component definition back
-    return (
-        <div className="relative">
-            <CanvasBackground />
-            <Header />
-             <Routes>
-                <Route path="/" element={<HomePage />} /> {/* Define a route for the home page */}
-                <Route path="/about" element={<AboutPage />} /> {/* Define a route for the about page */}
-                <Route path="/services" element={<ServicesPage />} /> {/* Define a route for the services page */}
-                <Route path="/process" element={<OurProcessPage />} /> {/* Define a route for the our process page */}
-                <Route path="/why-choose-us" element={<WhyChooseUsPage />} /> {/* Define a route for the why choose us page */}
-                <Route path="/contact" element={<ContactUsPage />} /> {/* Define a route for the contact page */}
-            </Routes>
-            <ContactUs />
-            <Footer />
-        </div>
-    );
+import HomePage from './src/HomePage';
+import AboutPage from './src/AboutPage';
+import ServicesPage from './src/ServicesPage';
+import OurProcessPage from './src/OurProcessPage';
+import WhyChooseUsPage from './src/WhyChooseUsPage';
+import ContactUsPage from './src/ContactUsPage';
+
+const App: React.FC = () => {
+  return (
+    <div className="relative">
+      <CanvasBackground />
+      <Header />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/services" element={<ServicesPage />} />
+        <Route path="/process" element={<OurProcessPage />} />
+        <Route path="/why-choose-us" element={<WhyChooseUsPage />} />
+        <Route path="/contact" element={<ContactUsPage />} />
+      </Routes>
+      <Footer />
+    </div>
+  );
 };
 
 const rootElement = document.getElementById('root');
@@ -41,6 +41,7 @@ const root = ReactDOM.createRoot(rootElement);
 root.render(
   <React.StrictMode>
     <BrowserRouter>
+      <ScrollToTop />
       <App />
     </BrowserRouter>
   </React.StrictMode>

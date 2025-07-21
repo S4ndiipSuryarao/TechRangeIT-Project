@@ -19,7 +19,7 @@ const Header: React.FC = () => {
 
   const { isScrolled } = useScrollSpy([], {}); // Call the hook and destructure isScrolled
   return (
-    <>
+    <>+
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-black/50 backdrop-blur-md backdrop-saturate-150 shadow-md' : 'bg-gradient-to-b from-black/40 to-transparent'}`}>
         <div className="container mx-auto px-4 sm:px-6 py-4 sm:py-6">
           <div className="flex items-center justify-between">
@@ -35,6 +35,9 @@ const Header: React.FC = () => {
  className={`font-medium transition-colors duration-300 hover:text-accent-teal ${
  'text-gray-200' // Basic styling for now
  }`}
+ onClick={() => {
+ window.scrollTo(0, 0);
+ }}
                 >
                   {link.name}
                 </RouterLink>

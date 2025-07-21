@@ -1,6 +1,6 @@
 import React from 'react';
-import AnimatedSection from '/home/user/copy-techrange-it-1/components/AnimatedSection';
-import OurProcess from '/home/user/copy-techrange-it-1/components/OurProcess';
+import AnimatedSection from '../components/AnimatedSection';
+import OurProcess from '../components/OurProcess';
 
 const OurProcessPage: React.FC = () => {
   return (
