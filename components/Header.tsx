@@ -6,7 +6,7 @@ import { Link as RouterLink } from 'react-router-dom';
  const navLinks = [
  { name: 'Home', href: '/', id: 'home-page' },
  { name: 'About Us', href: '/about', id: 'about-page' },
- { name: 'Services', href: '/services', id: 'services-page' },
+ { name: 'Services', href: '/services', id: 'services-page', id: 'services-page' },
  { name: 'Our Process', href: '/process', id: 'process-page' },
  { name: 'Why Choose Us', href: '/why-choose-us', id: 'why-choose-us-page' },
  { name: 'Contact Us', href: '/contact', id: 'contact-page' },
@@ -19,25 +19,27 @@ const Header: React.FC = () => {
 
   const { isScrolled } = useScrollSpy([], {}); // Call the hook and destructure isScrolled
   return (
-    <>+
+    <>
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-black/50 backdrop-blur-md backdrop-saturate-150 shadow-md' : 'bg-gradient-to-b from-black/40 to-transparent'}`}>
-        <div className="container mx-auto px-4 sm:px-6 py-4 sm:py-6">
+        <div className="container mx-auto px-4 sm:px-6 py-3 sm:py-5">
           <div className="flex items-center justify-between">
-             <Link href="/">
-               <img src="/Adobe Express - file.png" alt="TechRange IT Logo" className="h-10 w-auto" />
+            <Link href="/" className="flex items-center">
+              <img src="/Adobe Express - file.png" alt="TechRange IT Logo" className="h-10 w-auto mr-2 shadow-md" />
+              <span className="text-2xl sm:text-3xl font-bold transition-colors duration-300 text-white">
+                Tech<span className="text-accent-teal">Range</span> IT 
+              </span>
             </Link>
 
             <nav className="hidden md:flex items-center space-x-6">
               {navLinks.map((link) => (
                 <RouterLink
- key={link.name}
- to={link.href}
- className={`font-medium transition-colors duration-300 hover:text-accent-teal ${
- 'text-gray-200' // Basic styling for now
- }`}
- onClick={() => {
- window.scrollTo(0, 0);
- }}
+                  key={link.name}
+                  to={link.href}
+                  className={`font-medium transition-colors duration-300 hover:text-accent-teal ${'text-gray-200' // Basic styling for now
+                  }`}
+                  onClick={() => {
+                    window.scrollTo(0, 0);
+                  }}
                 >
                   {link.name}
                 </RouterLink>
