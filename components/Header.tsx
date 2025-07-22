@@ -23,8 +23,8 @@ const Header: React.FC = () => {
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-black/50 backdrop-blur-md backdrop-saturate-150 shadow-md' : 'bg-gradient-to-b from-black/40 to-transparent'}`}>
         <div className="container mx-auto px-4 sm:px-6 py-4 sm:py-6">
           <div className="flex items-center justify-between">
-            <Link href="/" className="text-2xl sm:text-3xl font-bold transition-colors duration-300 text-white">
- Tech<span className="text-accent-teal">Range</span> IT 
+             <Link href="/">
+               <img src="/Adobe Express - file.png" alt="TechRange IT Logo" className="h-10 w-auto" />
             </Link>
 
             <nav className="hidden md:flex items-center space-x-6">
