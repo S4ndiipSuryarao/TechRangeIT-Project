@@ -1,6 +1,6 @@
 import React from 'react';
-import AnimatedSection from '/home/user/copy-techrange-it-1/components/AnimatedSection';
-import AboutUs from '/home/user/copy-techrange-it-1/components/AboutUs';
+import AnimatedSection from '../components/AnimatedSection';
+import AboutUs from '../components/AboutUs';
 
 const AboutPage: React.FC = () => {
   return (
