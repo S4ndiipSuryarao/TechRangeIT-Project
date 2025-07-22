@@ -24,7 +24,7 @@ const Header: React.FC = () => {
         <div className="container mx-auto px-4 sm:px-6 py-3 sm:py-5">
           <div className="flex items-center justify-between">
             <Link href="/" className="flex items-center">
-              <img src="/3dTR.png" alt="TechRange IT Logo" className="h-10 w-auto mr-0.5 shadow-md border-2 border-white" />
+              <img src="/Adobe Express - file.png" alt="TechRange IT Logo" className="h-10 w-auto mr-0.5" />
               <span className="text-2xl sm:text-3xl font-bold transition-colors duration-300 text-white">
                 Tech<span className="text-accent-teal">Range</span> IT 
               </span>
